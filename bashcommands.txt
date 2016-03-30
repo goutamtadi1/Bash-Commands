@@ -1,0 +1,22 @@
+############################################################# 
+#                               Common Bash Commands 
+############################################################# 
+alias ll='ls -lart' 
+alias sbp="source ~/.bash_profile" 
+alias top="top -o MEM" 
+alias v1='vagrant ssh c6401' 
+alias v2='vagrant ssh c6402' 
+alias v3='vagrant ssh c6403' 
+alias v5='vagrant ssh c6405' 
+alias gitco='git checkout' 
+alias gitb='git branch' 
+alias rs='rsync -avz /Users/gtadi/ambari-vagrant/centos6.4/ambari root@c6405.ambari.apache.org:~/' 
+ 
+############################################################# 
+#                               Ambari Bash Commands 
+############################################################# 
+alias vambari='cd /Users/gtadi/ambari-vagrant/centos6.4/ambari/' 
+alias vinstall='cd /Users/gtadi/ambari-vagrant/centos6.4/ambari-toolbox/vagrant/ambari-dev' 
+alias workspace='cd ~/Documents/ambari-ci' 
+alias clusterinstall='~/ambari-vagrant/centos6.4/ambari-dev/install_ambari_cluster.sh' 
+ 
