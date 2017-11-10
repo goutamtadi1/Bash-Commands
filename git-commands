@@ -1,0 +1,35 @@
+############################################################
+### GIT ALIASES
+############################################################
+
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.lg 'log --oneline'
+git config --global alias.sha 'log --format=format:%h'
+
+##############################################################
+### COMMAND PROMPT
+##############################################################
+brew install bash-git-prompt
+
+cat >> ~/.bashrc <<-EOF
+
+#####################################################################
+## GIT COMMAND PROMPT - START
+#####################################################################
+
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Solarized
+
+if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+  __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share
+  source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
+fi
+
+#####################################################################
+## GIT COMMAND PROMPT - END
+#####################################################################
+
+EOF
