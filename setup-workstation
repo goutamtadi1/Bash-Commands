@@ -4,3 +4,8 @@ Brew Install
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+###########################
+ Install git author
+###########################
+
+https://github.com/pivotal/git-author
