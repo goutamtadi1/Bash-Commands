@@ -1,0 +1,5 @@
+Interactive install on macOS:
+
+```
+curl https://sdk.cloud.google.com | bash
+```
