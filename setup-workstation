@@ -9,3 +9,10 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 ###########################
 
 https://github.com/pivotal/git-author
+
+###########################
+Brew packages
+###########################
+
+brew install homebrew/cask/shiftit
+brew install homebrew/cask/flycut
