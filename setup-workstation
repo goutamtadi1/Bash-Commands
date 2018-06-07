@@ -16,3 +16,4 @@ Brew packages
 
 brew install homebrew/cask/shiftit
 brew install homebrew/cask/flycut
+brew install golang
