@@ -24,3 +24,12 @@ Setup PS1
 ###########################
 
 echo "export PS1='\e[0;33m[\u@\h \W]\$ \e[m'" >> ~/.bash_profile
+
+###########################
+gcloud cleanup docker images
+###########################
+
+function delete-gcloud-container-images() {
+  REPO=$1
+  gcloud container images list-tags ${REPO} --filter='-tags:*' --format='get(digest)' --limit=unlimited | awk -v repo=${REPO} '{print repo "@" $1}' | xargs gcloud container images delete --quiet
+}
