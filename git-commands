@@ -1,13 +1,28 @@
 ############################################################
 ### GIT ALIASES
 ############################################################
-
-git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.ci commit
-git config --global alias.lg 'log --oneline'
-git config --global alias.sha 'log --format=format:%h'
+# Copy this to ~/.gitconfig
+[alias]
+        st = status
+        di = diff
+        co = checkout
+        ci = commit
+        cp = cherry-pick
+        br = branch
+        sta = stash
+        llog = log --date=local
+        flog = log --pretty=fuller --decorate
+        lg = log --oneline
+        lol = log --graph --decorate --oneline
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+        blog = log origin/master... --left-right
+        ds = diff --staged
+        fixup = commit --fixup
+        squash = commit --squash
+        unstage = reset HEAD
+        rum = rebase master@{u}
+        sha = log --format=format:%h
+        pushfwl = push --force-with-lease
 
 ##############################################################
 ### COMMAND PROMPT
