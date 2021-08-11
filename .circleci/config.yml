@@ -9,6 +9,7 @@ jobs:
       - image: 'cimg/base:stable'
     steps:
       - gh/setup
+      - gh/clone
       - run:
           command: |
             echo "Creating git pr"
