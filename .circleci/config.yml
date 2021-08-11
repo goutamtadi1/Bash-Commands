@@ -23,7 +23,7 @@ jobs:
             Stage release
             EOF
             git add release.txt
-            git commit -m 'new release' -m '/pr -d --title "test pr" ' -m '/cc #another-test'
+            git commit -m 'new release' -m '/pr --title "test pr" --draft' -m '/cc #another-test'
             git push -u origin HEAD
           name: Create Pull Request
 
