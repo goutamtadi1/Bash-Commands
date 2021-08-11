@@ -13,7 +13,7 @@ jobs:
       - run:
           command: |
             echo "Creating git pr"
-            gh pr create --base main --title "Stage release" --body "Hello test Stage release"
+            gh pr create --base master --title "Stage release" --body "Hello test Stage release"
           name: Create Pull Request
 
 workflows:
