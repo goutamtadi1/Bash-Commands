@@ -14,7 +14,7 @@ jobs:
           command: |
             git checkout -b stage-release
             echo "Creating git pr"
-            gh pr create --head  --title "Stage release" --body "Hello test Stage release"
+            gh pr create -d --title "Stage release" --body "Hello test Stage release"
           name: Create Pull Request
 
 workflows:
