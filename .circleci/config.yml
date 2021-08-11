@@ -23,8 +23,9 @@ jobs:
             Stage release
             EOF
             git add release.txt
-            git commit -m 'new release' -m '/pr --title "test pr" --draft' -m '/cc #another-test'
+            git commit -m 'new release'
             git push -u origin HEAD
+            gh pr create --title "New Stage Release" --draft
           name: Create Pull Request
 
 workflows:
