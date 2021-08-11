@@ -20,4 +20,4 @@ workflows:
     jobs:
       - create-pr:
           context: 
-            - github-repo
+            - github_repo
