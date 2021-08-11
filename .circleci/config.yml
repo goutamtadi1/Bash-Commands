@@ -1,0 +1,23 @@
+---
+version: 2.1
+orbs:
+  gh: circleci/github-cli@1.0
+
+jobs:
+  create-pr:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - gh/setup
+      - run:
+          command: |
+            echo "Creating git pr"
+            gh pr create --base main --title "Stage release" --body "Hello test Stage release"
+          name: Create Pull Request
+
+workflows:
+  build:
+    jobs:
+      - create-pr:
+          context: 
+            - github-repo
