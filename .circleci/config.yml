@@ -8,6 +8,9 @@ jobs:
     docker:
       - image: 'cimg/base:stable'
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 24:f0:91:e0:f6:03:3a:04:3a:b7:95:1e:00:e5:e2:61
       - gh/setup
       - gh/clone
       - run:
