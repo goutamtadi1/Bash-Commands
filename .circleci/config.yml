@@ -26,7 +26,7 @@ jobs:
             git commit -m "new release"
             git push -u origin HEAD
             # gh pr create -d --base master --head stage-release --title "Stage release" --body "Hello test Stage release"
-            gh pr create -d --title "test pr" --head
+            gh pr create -d --title "test pr"
           name: Create Pull Request
 
 workflows:
