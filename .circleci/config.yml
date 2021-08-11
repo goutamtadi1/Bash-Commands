@@ -25,7 +25,7 @@ jobs:
             git add release.txt
             git commit -m 'new release'
             git push -u origin HEAD
-            gh pr create --title "New Stage Release" --draft
+            gh pr create --title "New Stage Release" --draft --body "New Draft PR for Stage Release"
           name: Create Pull Request
 
 workflows:
