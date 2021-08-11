@@ -13,7 +13,11 @@ jobs:
       - run:
           command: |
             git checkout -b stage-release
-            echo "Creating git pr"
+            cat\<<EOF>release.txt 
+            Stage release
+            EOF
+            git add release.txt
+            git commit -m "new release"
             gh pr create -d --head stage-release --title "Stage release" --body "Hello test Stage release"
           name: Create Pull Request
 
