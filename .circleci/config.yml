@@ -1,7 +1,7 @@
 ---
 version: 2.1
 orbs:
-  gh: circleci/github-cli@1.0
+  gh: circleci/github-cli@1.0.3
 
 jobs:
   create-pr:
@@ -20,8 +20,8 @@ jobs:
             EOF
             git add release.txt
             git commit -m "new release"
-            git push -u origin stage-release
-            gh pr create -d --base master --head stage-release --title "Stage release" --body "Hello test Stage release"
+            # gh pr create -d --base master --head stage-release --title "Stage release" --body "Hello test Stage release"
+            gh pr create -d --title "test pr"
           name: Create Pull Request
 
 workflows:
