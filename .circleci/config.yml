@@ -11,6 +11,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - 24:f0:91:e0:f6:03:3a:04:3a:b7:95:1e:00:e5:e2:61
+            - c0:62:36:77:1a:4b:e9:5e:bf:c1:aa:2b:1a:43:fb:5a
       - gh/setup
       - gh/clone
       - run:
