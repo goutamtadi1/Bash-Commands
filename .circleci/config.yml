@@ -37,12 +37,19 @@ jobs:
           paths:
             - pr
   notify:
+    environment:
+      PR: ""
     working_directory: ~/shared-dir
     docker:
       - image: 'cimg/base:stable'
     steps:
       - attach_workspace:
           at: ~/shared-dir
+      - run:
+          name: "set variable"
+          command: |
+            PR=$(cat ~/shared-dir/pr)
+            echo $PR
       - slack/notify:
           custom: |
             {
@@ -52,7 +59,7 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": "*This is a text notification*",
+                      "text": "$PR",
                       "emoji": true
                     }
                   ]
