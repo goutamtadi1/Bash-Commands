@@ -59,12 +59,14 @@ jobs:
               "blocks": [
                 {
                   "type": "section",
+                  "text": {
+                    "text": ":white_check_mark: Created a New *Stage Release Draft PR*",
+                    "type": "mrkdwn"
+                  },
                   "fields": [
                     {
-                      "type": "plain_text",
-                      "text": ":white_check_mark: Created a New Stage Release Draft PR",
-                      "url": "$PR",
-                      "emoji": true
+                      "type": "mrkdwn",
+                      "text": "$PR",
                     }
                   ]
                 }
