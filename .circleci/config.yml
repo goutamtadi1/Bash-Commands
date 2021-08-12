@@ -48,8 +48,8 @@ jobs:
           name: "set variable"
           command: |
             PR=$(cat ~/shared-dir/pr)
-            echo "export PR=$PR" >> BASH_ENV
-            source BASH_ENV
+            echo "export PR=$PR" >> $BASH_ENV
+            source $BASH_ENV
             echo $PR
       - slack/notify:
           custom: |
@@ -60,7 +60,7 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": "\"$PR"\",
+                      "text": "$PR",
                       "emoji": true
                     }
                   ]
