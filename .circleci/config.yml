@@ -31,6 +31,7 @@ jobs:
             git push -u origin HEAD
             PR=$(gh pr create --title "New Stage Release" --draft --body "New Draft PR for Stage Release")
             echo $PR > ~/shared-dir/pr
+            echo $PR
           name: Create Pull Request
       - persist_to_workspace:
           root: ~/shared-dir
@@ -59,7 +60,7 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": "$PR",
+                      "text": "PR: $PR",
                       "emoji": true
                     }
                   ]
