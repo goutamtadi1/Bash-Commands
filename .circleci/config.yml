@@ -51,8 +51,6 @@ jobs:
           command: |
             PR=$(cat ~/shared-dir/pr)
             echo "export PR=$PR" >> $BASH_ENV
-            DATE=$(date +"%Y-%m-%d %H-%M-%S")
-            echo "export DATE=$DATE" >> $BASH_ENV
             source $BASH_ENV
             echo $PR
       - slack/notify:
@@ -63,7 +61,7 @@ jobs:
                   "type": "header",
                   "text": {
                     "type": "plain_text",
-                    "text": " :white_check_mark:Stage Release - $DATE"
+                    "text": ":white_check_mark: Stage Release"
                   }
                 },
                 {
