@@ -62,7 +62,7 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": ":white_check_mark: Created a New Stage Release Draft PR: $PR",
+                      "text": ":white_check_mark: Created a New Stage Release Draft PR: `$PR`",
                       "emoji": true
                     }
                   ]
