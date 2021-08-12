@@ -59,7 +59,10 @@ jobs:
               "blocks": [
                 {
                   "type": "header",
-                  "text": "Stage Release"
+                  "text": {
+                    "type": "plain_text",
+                    "text": "Stage Release"
+                  }
                 },
                 {
                   "type": "divider"
