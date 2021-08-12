@@ -88,11 +88,11 @@ workflows:
   pr-and-notify:
     triggers:
       - schedule:
-          cron: "40 * * * *"
+          cron: "* * * * *"
           filters:
             branches:
               only:
-                - master
+                - circleci-project-setup
     jobs:
       - create-pr:
           context: 
