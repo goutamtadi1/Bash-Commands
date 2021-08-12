@@ -6,9 +6,12 @@ orbs:
 
 jobs:
   create-pr:
+    working_directory: ~/shared-dir
     docker:
       - image: 'cimg/base:stable'
     steps:
+      - attach_workspace:
+          at: ~/shared-dir
       - add_ssh_keys:
           fingerprints:
             - 24:f0:91:e0:f6:03:3a:04:3a:b7:95:1e:00:e5:e2:61
@@ -26,12 +29,20 @@ jobs:
             git add release.txt
             git commit -m 'new release'
             git push -u origin HEAD
-            gh pr create --title "New Stage Release" --draft --body "New Draft PR for Stage Release"
+            PR=$(gh pr create --title "New Stage Release" --draft --body "New Draft PR for Stage Release")
+            echo $PR > ~/shared-dir/pr
           name: Create Pull Request
+      - persist_to_workspace:
+          root: ~/shared-dir
+          paths:
+            - pr
   notify:
+    working_directory: ~/shared-dir
     docker:
       - image: 'cimg/base:stable'
     steps:
+      - attach_workspace:
+          at: ~/shared-dir
       - slack/notify:
           custom: |
             {
@@ -58,3 +69,5 @@ workflows:
             - github_repo
       - notify:
           context: slack_astronomer
+          requires:
+            - create-pr
