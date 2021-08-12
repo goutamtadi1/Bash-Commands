@@ -65,7 +65,7 @@ jobs:
                   },
                   "fields": [
                     {
-                      "type": "mrkdwn",
+                      "type": "plain_text",
                       "text": "$PR",
                     }
                   ]
