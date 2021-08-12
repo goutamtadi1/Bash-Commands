@@ -86,6 +86,13 @@ jobs:
 
 workflows:
   pr-and-notify:
+    triggers:
+      - schedule:
+          cron: "* * * * *"
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - create-pr:
           context: 
