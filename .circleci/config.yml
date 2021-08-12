@@ -58,6 +58,13 @@ jobs:
             {
               "blocks": [
                 {
+                  "type": "header",
+                  "text": "Stage Release"
+                },
+                {
+                  "type": "divider"
+                },
+                {
                   "type": "section",
                   "text": {
                     "text": ":white_check_mark: Created a New *Stage Release Draft PR*",
