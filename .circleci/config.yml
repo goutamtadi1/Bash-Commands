@@ -51,12 +51,10 @@ jobs:
           event: always
 
 workflows:
-  build:
+  pr-and-notify:
     jobs:
       - create-pr:
           context: 
             - github_repo
-  send-notification:
-    jobs:
       - notify:
           context: slack_astronomer
