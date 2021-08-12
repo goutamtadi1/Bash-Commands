@@ -2,6 +2,7 @@
 version: 2.1
 orbs:
   gh: circleci/github-cli@1.0.3
+  slack: circleci/slack@4.4.2
 
 jobs:
   create-pr:
@@ -27,6 +28,27 @@ jobs:
             git push -u origin HEAD
             gh pr create --title "New Stage Release" --draft --body "New Draft PR for Stage Release"
           name: Create Pull Request
+  notify:
+    docker:
+      - image: 'cimg/base:stable'
+    steps:
+      - slack/notify:
+          custom: |
+            {
+              "blocks": [
+                {
+                  "type": "section",
+                  "fields": [
+                    {
+                      "type": "plain_text",
+                      "text": "*This is a text notification*",
+                      "emoji": true
+                    }
+                  ]
+                }
+              ]
+            }
+          event: always
 
 workflows:
   build:
@@ -34,3 +56,7 @@ workflows:
       - create-pr:
           context: 
             - github_repo
+  send-notification:
+    jobs:
+      - notify:
+          context: slack_astronomer
