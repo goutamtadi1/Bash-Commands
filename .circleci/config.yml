@@ -60,7 +60,7 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": ""$PR"",
+                      "text": "\"$PR"\",
                       "emoji": true
                     }
                   ]
