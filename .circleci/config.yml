@@ -20,16 +20,18 @@ jobs:
       - gh/clone
       - run:
           command: |
-            git checkout -b stage-release
+            DATE=$(date +"%Y-%m-%d_%H-%M-%S")
+            git checkout -b stage-release-$DATE
             git config --global user.email "gtadi@astronomer.io"
             git config --global user.name "Goutam Tadi"
             cat\<<EOF>release.txt 
             Stage release
+            $DATE
             EOF
             git add release.txt
-            git commit -m 'new release'
+            git commit -m 'Stage Release $DATE'
             git push -u origin HEAD
-            PR=$(gh pr create --title "New Stage Release" --draft --body "New Draft PR for Stage Release")
+            PR=$(gh pr create --title "New Stage Release $DATE" --draft --body "New Draft PR for Stage Release $DATE")
             echo $PR > ~/shared-dir/pr
             echo $PR
           name: Create Pull Request
@@ -60,14 +62,14 @@ jobs:
                   "fields": [
                     {
                       "type": "plain_text",
-                      "text": "$PR",
+                      "text": ":white_check_mark: Created a New Stage Release Draft PR: $PR",
                       "emoji": true
                     }
                   ]
                 }
               ]
             }
-          event: always
+          event: pass
 
 workflows:
   pr-and-notify:
